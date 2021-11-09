@@ -22,7 +22,7 @@ def verificar_miniterminos(numeros):
             repetidos=numeros2.count(i)
             if not (repetidos<2):
                 print("Se repite el minitérmino", i)
-                
+
 verificar_miniterminos(numeros)
 
 columnas = int(dato)
