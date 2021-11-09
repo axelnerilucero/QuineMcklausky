@@ -16,18 +16,31 @@ def tablero(variables):
     variables = int(input("Cuantas variables: ")) #aqui pa que le digas cuantas
     tabla_vdd = [] #aqui va hacer la tablita
     num_casas = ( (2) ** (variables)) # aqui van a ser los renglones que tiene la tabla
-    for cuadrito in range(0, num_casas): #lo recorremos para ir agregando los numeros
-        tabla_vdd.append(str(bin(cuadrito).replace("0b", ""))) #aqui vamos agregando los 0s y 1s, bin te da la representacion binaria de un numero pero con un 0b demas, por eso lo remplazamos por un espacio en blanco
-        while len(tabla_vdd[cuadrito]) < variables:
-            tabla_vdd[cuadrito] = "0"+tabla_vdd[cuadrito]
-    return tabla_vdd
-    print(tabla_vdd)
+    if (variables>=2 and variables<=10):
+        for cuadrito in range(0, num_casas): #lo recorremos para ir agregando los numeros
+            tabla_vdd.append(str(bin(cuadrito).replace("0b", ""))) #aqui vamos agregando los 0s y 1s, bin te da la representacion binaria de un numero pero con un 0b demas, por eso lo remplazamos por un espacio en blanco
+            while len(tabla_vdd[cuadrito]) < variables:
+                tabla_vdd[cuadrito] = "0"+tabla_vdd[cuadrito]
+        return tabla_vdd
+        print(tabla_vdd)
+    else:
+        print("ingrese entre 2 a 10 variables")
+        return tablero(0)
 
 tab = tablero(0)
 def miniterminos(miniter):
     limit=0
     miniter = input("introduza los miniterminos en orden ascendente separados por una coma (,): ").split(',')
     numeros = [int(x) for x in miniter]
+    if len(tab) == 2**2:
+        limit = 3
+        if len(miniter) > 4:
+            print("ingresaste mas miniterminos de los necesarios")
+        for x in miniter:
+            x2 = int(x)
+            if x2 > limit:
+                print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
+                return (miniterminos(0))
     if len(tab) == 2**3:
         limit = 7
         if len(miniter) > 8:
@@ -106,7 +119,7 @@ def miniterminos(miniter):
             x2 = int(x)
             if x2 > 1023:
                 print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0))
+                return (miniterminos(0)) 
     return funcion(numeros)
     #print(tab,miniter)
 tablaceros = []
