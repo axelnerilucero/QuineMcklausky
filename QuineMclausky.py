@@ -23,10 +23,11 @@ def tablero(variables):
     return tabla_vdd
     print(tabla_vdd)
 
+tab = tablero(0)
 def miniterminos(miniter):
-    tab = tablero(0)
     limit=0
     miniter = input("introduza los miniterminos en orden ascendente separados por una coma (,): ").split(',')
+    numeros = [int(x) for x in miniter]
     if len(tab) == 2**3:
         limit = 7
         if len(miniter) > 8:
@@ -106,11 +107,61 @@ def miniterminos(miniter):
             if x2 > 1023:
                 print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
                 return (miniterminos(0))
-    print(tab,miniter)
-"""
+    return funcion(numeros)
+    #print(tab,miniter)
+tablaceros = []
+tablaunos = []
+tabladoss = []
+tablatress = []
+tablacuatros = []
+tablacincos = []
+tablaseises = []
+tablasietes = []
+tablaochos = []
+tablanueves = []
+tabladieces = []
+
+def funcion(numeros):
+    funcion=[]
+    for i in tab:
+        for j in numeros:
+            if(tab.index(i)==j):
+                funcion.append(i)
+
+    for z in funcion:
+        numeros2 = [int(k) for k in z]
+        suma = sum(numeros2)
+        if suma == 0:
+            tablaceros.append(z)
+        if suma == 1:
+            tablaunos.append(z)
+        elif suma == 2:
+            tabladoss.append(z)
+        elif suma == 3:
+            tablatress.append(z)
+        elif suma == 4:
+            tablacuatros.append(z)
+        elif suma == 5:
+            tablacincos.append(z)
+        elif suma == 6:
+            tablaseises.append(z)
+        elif suma == 7:
+            tablasietes.append(z)
+        elif suma == 8:
+            tablaochos.append(z)
+        elif suma == 9:
+            tablanueves.append(z)
+        elif suma == 10:
+            tabladieces.append(z)
+        else:
+            print("nomas hay 10 variables chabacano")
+    print(tablaceros,tablaunos,tabladoss,tablatress,tablacuatros)
+
+
+
+
 #si haces este codiguito de 0s y 1s pasa a letras, por lo que esto servira correctamente al mostrar la ultima funcion
-tab = tablero(0)
-for x in tab:
-    print(bintostr(x))
-"""
+#tab = tablero(0)
+#for x in tab:
+#    print(bintostr(x))"
 miniterminos(0)
