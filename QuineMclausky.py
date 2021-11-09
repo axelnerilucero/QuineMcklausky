@@ -119,7 +119,7 @@ def miniterminos(miniter):
             x2 = int(x)
             if x2 > 1023:
                 print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0)) 
+                return (miniterminos(0))
     return funcion(numeros)
     #print(tab,miniter)
 tablaceros = []
@@ -140,7 +140,6 @@ def funcion(numeros):
         for j in numeros:
             if(tab.index(i)==j):
                 funcion.append(i)
-
     for z in funcion:
         numeros2 = [int(k) for k in z]
         suma = sum(numeros2)
@@ -166,10 +165,53 @@ def funcion(numeros):
             tablanueves.append(z)
         elif suma == 10:
             tabladieces.append(z)
-        else:
+        elif suma > 10:
             print("nomas hay 10 variables chabacano")
-    print(tablaceros,tablaunos,tabladoss,tablatress,tablacuatros)
-
+  # Aqui es para que dependiendo de los miniterminos dados muestre las tablas en las cuales contengan n numero de unos
+    if len(tablaceros) <= 0:
+        pass
+    else:
+        print(tablaceros," miniterminos con 0 unos")
+    if len(tablaunos) <= 0:
+        pass
+    else:
+        print(tablaunos," miniterminos con 1 unos")
+    if len(tabladoss) <= 0:
+        pass
+    else:
+        print(tabladoss," miniterminos con 2 unos")
+    if len(tablatress) <= 0:
+        pass
+    else:
+        print(tablatress," miniterminos con 3 unos")
+    if len(tablacuatros) <= 0:
+        pass
+    else:
+        print(tablacuatros," miniterminos con 4 unos")
+    if len(tablacincos) <= 0:
+        pass
+    else:
+        print(tablacincos," miniterminos con 5 unos")
+    if len(tablaseises) <= 0:
+        pass
+    else:
+        print(tablaseises," miniterminos con 6 unos")
+    if len(tablasietes) <= 0:
+        pass
+    else:
+        print(tablasietes," miniterminos con 7 unos")
+    if len(tablaochos) <= 0:
+        pass
+    else:
+        print(tablaochos," miniterminos con 8 unos")
+    if len(tablanueves) <= 0:
+        pass
+    else:
+        print(tablanueves," miniterminos con 9 unos")
+    if len(tabladieces) <= 0:
+        pass
+    else:
+        print(tabladieces," miniterminos con 10 unos")
 
 
 
