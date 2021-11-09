@@ -108,6 +108,7 @@ def miniterminos(miniter):
                 return (miniterminos(0))
     print(tab,miniter)
 """
+#si haces este codiguito de 0s y 1s pasa a letras, por lo que esto servira correctamente al mostrar la ultima funcion
 tab = tablero(0)
 for x in tab:
     print(bintostr(x))
