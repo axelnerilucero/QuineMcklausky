@@ -1,3 +1,4 @@
+#import numpy as np
 def bintostr(numeros):
     qtd = len(numeros)
     palabra = []
@@ -213,10 +214,22 @@ def funcion(numeros):
     else:
         print(tabladieces," miniterminos con 10 unos")
 
+"""
+def tabla(tablak,tablay):
+    a = np.array(tablak)
+    b = np.array(tablay)
 
+    for k in a:
+        for y in b:
+            if k == y:
+                print("Que esta pasando doctor garcia")
+            else:
+                print(y,k)
+"""
 
 #si haces este codiguito de 0s y 1s pasa a letras, por lo que esto servira correctamente al mostrar la ultima funcion
 #tab = tablero(0)
 #for x in tab:
 #    print(bintostr(x))"
 miniterminos(0)
+#print(tabla(tablaunos,tabladoss))
