@@ -19,7 +19,7 @@ def tablero(variables):
     if (variables>=2 and variables<=10):
         for cuadrito in range(num_casas): #lo recorremos para ir agregando los numeros
             actual= bin(cuadrito)[2:]
-            tabla_vdd.append(str(actual)) #aqui vamos agregando los 0s y 1s, bin te da la representacion binaria de un numero pero con un 0b demas, por eso lo remplazamos por un espacio en blanco            
+            tabla_vdd.append(str(actual)) #aqui vamos agregando los 0s y 1s, bin te da la representacion binaria de un numero pero con un 0b demas, por eso lo remplazamos por un espacio en blanco
             tabla_vdd[cuadrito] = tabla_vdd[cuadrito].zfill(variables)
         return tabla_vdd
         print(tabla_vdd)
@@ -225,12 +225,14 @@ def funcion(numeros):
     else:
         print(tabladieces," miniterminos con 10 unos")
         tabla_final.append(tabladieces)
-    return tabla_final
-
+    """
+    for elem in tabla_final:
+        for mini in elem:
+            print(mini)
+    """
 
 #si haces este codiguito de 0s y 1s pasa a letras, por lo que esto servira correctamente al mostrar la ultima funcion
 #tab = tablero(0)
 #for x in tab:
 #    print(bintostr(x))"
 miniterminos(0)
-
