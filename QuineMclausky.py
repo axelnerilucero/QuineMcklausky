@@ -13,8 +13,8 @@ def bintostr(numeros):
 letra = bintostr('--11-11-10')
 print(letra)
 
-def tablero(variables):
-    variables = int(input("Cuantas variables: ")) #aqui pa que le digas cuantas
+variables = int(input("Cuantas variables: ")) #aqui pa que le digas cuantas
+def tablero():
     tabla_vdd = [] #aqui va hacer la tablita
     num_casas = ( (2) ** (variables)) # aqui van a ser los renglones que tiene la tabla
     if (variables>=2 and variables<=10):
@@ -28,97 +28,18 @@ def tablero(variables):
         print("ingrese entre 2 a 10 variables")
         return tablero(0)
 
-tab = tablero(0)
+tab = tablero()
 def miniterminos(miniter):
     limit=0
     miniter = input("introduza los miniterminos en orden ascendente separados por una coma (,): ").split(',')
     numeros = [int(x) for x in miniter]
-    if len(tab) == 2**2:
-        limit = 3
-        if len(miniter) > 4:
+    if len(tab) == 2**variables:
+        limit = (2**variables)-1
+        if len(miniter) > 2**variables:
             print("ingresaste mas miniterminos de los necesarios")
         for x in miniter:
             x2 = int(x)
             if x2 > limit:
-                print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0))
-    if len(tab) == 2**3:
-        limit = 7
-        if len(miniter) > 8:
-            print("ingresaste mas miniterminos de los necesarios")
-        for x in miniter:
-            x2 = int(x)
-            if x2 > 7:
-                print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0))
-    elif len(tab) == 2**4:
-        limit = 15
-        if len(miniter) > 16:
-            print("ingresaste mas miniterminos de los necesarios")
-            return (miniterminos(0))
-        for x in miniter:
-            x2 = int(x)
-            if x2 > 15:
-                print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0))
-    elif len(tab) == 2**5:
-        limit = 31
-        if len(miniter) > 32:
-            print("ingresaste mas miniterminos de los necesarios")
-            return (miniterminos(0))
-        for x in miniter:
-            x2 = int(x)
-            if x2 > 31:
-                print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0))
-    elif len(tab) == 2**6:
-        limit = 63
-        if len(miniter) > 64:
-            print("ingresaste mas miniterminos de los necesarios")
-            return (miniterminos(0))
-        for x in miniter:
-            x2 = int(x)
-            if x2 > 63:
-                print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0))
-    elif len(tab) == 2**7:
-        limit = 127
-        if len(miniter) > 128:
-            print("ingresaste mas miniterminos de los necesarios")
-            return (miniterminos(0))
-        for x in miniter:
-            x2 = int(x)
-            if x2 > 127:
-                print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0))
-    elif len(tab) == 2**8:
-        limit = 255
-        if len(miniter) > 256:
-            print("ingresaste mas miniterminos de los necesarios")
-            return (miniterminos(0))
-        for x in miniter:
-            x2 = int(x)
-            if x2 > 255:
-                print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0))
-    elif len(tab) == 2**9:
-        limit = 511
-        if len(miniter) > 512:
-            print("ingresaste mas miniterminos de los necesarios")
-            return (miniterminos(0))
-        for x in miniter:
-            x2 = int(x)
-            if x2 > 511:
-                print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
-                return (miniterminos(0))
-    elif len(tab) == 2**10:
-        limit = 1023
-        if len(miniter) > 1024:
-            print("ingresaste mas miniterminos de los necesarios")
-            return (miniterminos(0))
-        for x in miniter:
-            x2 = int(x)
-            if x2 > 1023:
                 print("no existe el minitermino " +str(x2)+ " dentro de los miniterminos que se permiten")
                 return (miniterminos(0))
     return funcion(numeros)
@@ -213,23 +134,33 @@ def funcion(numeros):
         pass
     else:
         print(tabladieces," miniterminos con 10 unos")
+    _comparar(tablaceros,tablaunos)
+palabra = []
 
-"""
-def tabla(tablak,tablay):
-    a = np.array(tablak)
-    b = np.array(tablay)
+def comparaciones(A,P):
+  if len(A) > 0:
+    for i in range(len(A)-len(P)+1):
+      for j in range(len(P)):
+        if P[j] == A[i+j]:
+          cad1 = P[j]
+          palabra.append(cad1)
+        elif P[j] != A[i+j]:
+          cad2 = P[j].replace('1','-',1)
+          palabra.append(cad2)
+    else:
+      pass
 
-    for k in a:
-        for y in b:
-            if k == y:
-                print("Que esta pasando doctor garcia")
-            else:
-                print(y,k)
-"""
+  lista = lambda palabra, variable: [palabra[i:i+variable] for i in range(0, len(palabra), variable)]
+  output = lista(palabra, variables)
+  print(output)
+#arr = ["000100","100000"]
+#rr = ["000101","100010","100100"]
 
-#si haces este codiguito de 0s y 1s pasa a letras, por lo que esto servira correctamente al mostrar la ultima funcion
-#tab = tablero(0)
-#for x in tab:
-#    print(bintostr(x))"
+def _comparar(arr,prr):
+  for elem in arr:
+    for ele in prr:
+      comparaciones(elem,ele)
+      print("------")
+
+_comparar(tablaceros,tablaunos)
 miniterminos(0)
-#print(tabla(tablaunos,tabladoss))
