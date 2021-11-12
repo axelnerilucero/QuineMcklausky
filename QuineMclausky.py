@@ -134,7 +134,7 @@ def funcion(numeros):
         pass
     else:
         print(tabladieces," miniterminos con 10 unos")
-    print("\n")
+    print("\n\n")
 palabra2 = []
 
 tablaceros1 = []
@@ -173,30 +173,181 @@ def _comparar(arr,prr,out):
     for ele in prr:
       comparaciones(elem,ele,out)
 
+def conteo(t,num):
+  veces = 0
+  for i in range(len(t) - len(num) + 1):
+    for j in range(len(num)):
+      if num[j] == t[i+j]:
+        pass
+      else:
+        break
+    if j+1 == len(num) and t[i+j] == num[j]:
+        veces = veces + 1
+  #print(f"Se encontro en la posicion: {i}")
+  return veces
+
+tablaceros2 = []
+tablaunos2 = []
+tabladoss2 = []
+tablatress2 = []
+tablacuatros2 = []
+tablacincos2 = []
+tablaseises2 = []
+tablasietes2 = []
+tablaochos2 = []
+tablanueves2 = []
+tabladieces2 = []
+
 def compararTodas():
     _comparar(tablaceros,tablaunos,tablaceros1)
-    print(tablaceros1)
+    if len(tablaceros) > 0:
+        print(tablaceros1)
     _comparar(tablaunos,tabladoss,tablaunos1)
-    print(tablaunos1)
+    if len(tablaunos) > 0:
+        for elem in reversed(tablaunos1):
+            res = conteo(elem,"1")
+            if res < 1:
+                tablaunos1.remove(elem)
+        print(tablaunos1)
     _comparar(tabladoss,tablatress,tabladoss1)
-    print(tabladoss1)
+    if len(tabladoss) > 0:
+        for elem in reversed(tabladoss1):
+            res = conteo(elem,"1")
+            if res < 2:
+                tabladoss1.remove(elem)
+        print(tabladoss1)
     _comparar(tablatress,tablacuatros,tablatress1)
-    print(tablatress1)
+    if len(tablatress) > 0:
+        for elem in reversed(tablatress1):
+            res = conteo(elem,"1")
+            if res < 3:
+                tablatress1.remove(elem)
+        print(tablatress1)
     _comparar(tablacuatros,tablacincos,tablacuatros1)
-    print(tablacuatros1)
+    if len(tablacuatros) > 0:
+        for elem in reversed(tablacuatros1):
+            res = conteo(elem,"1")
+            if res < 4:
+                tablacuatros1.remove(elem)
+        print(tablacuatros1)
     _comparar(tablacincos,tablaseises,tablacincos1)
-    print(tablacincos1)
+    if len(tablacincos) > 0:
+        for elem in reversed(tablacincos1):
+            res = conteo(elem,"1")
+            if res < 5:
+                tablacincos1.remove(elem)
+        print(tablacincos1)
     _comparar(tablaseises,tablasietes,tablaseises1)
-    print(tablaseises1)
+    if len(tablaseises) > 0:
+        for elem in reversed(tablaseises1):
+            res = conteo(elem,"1")
+            if res < 6:
+                tablaseises1.remove(elem)
+        print(tablaseises1)
     _comparar(tablasietes,tablaochos,tablasietes1)
-    print(tablasietes1)
+    if len(tablasietes) > 0:
+        for elem in reversed(tablasietes1):
+            res = conteo(elem,"1")
+            if res < 7:
+                tablasietes1.remove(elem)
+        print(tablasietes1)
     _comparar(tablaochos,tablanueves,tablaochos1)
-    print(tablaochos1)
+    if len(tablaochos) > 0:
+        for elem in reversed(tablaochos1):
+            res = conteo(elem,"1")
+            if res < 8:
+                tablaochos1.remove(elem)
+        print(tablaochos1)
     _comparar(tablanueves,tabladieces,tablanueves1)
-    print(tablanueves1)
+    if len(tablanueves) > 0:
+        for elem in reversed(tablanueves1):
+            res = conteo(elem,"1")
+            if res < 9:
+                tablanueves1.remove(elem)
+        print(tablanueves1)
+    if len(tabladieces) > 0:
+        print(tabladieces)
+    else:
+        pass
+final = []
+def compararTodas2():
+    _comparar(tablaceros1,tablaunos1,tablaceros2)
+    if len(tablaceros1) > 0:
+        print(tablaceros2)
+    _comparar(tablaunos1,tabladoss1,tablaunos2)
+    if len(tablaunos1) > 0:
+        for elem in reversed(tablaunos2):
+            res = conteo(elem,"1")
+            if res < 1:
+                tablaunos2.remove(elem)
+            elif res < 1 and tablaunos2[elem] == elem:
+                final.append(elem)
+                tablaunos2.remove(elem)
 
-    #print(tabladieces)
-    #print(tabladieces)
+        print(tablaunos2)
+"""
+    _comparar(tabladoss1,tablatress1,tabladoss2)
+    if len(tabladoss1) > 0:
+        for elem in reversed(tabladoss2):
+            res = conteo(elem,"1")
+            if res < 2:
+                tabladoss2.remove(elem)
+        print(tabladoss2)
+    _comparar(tablatress1,tablacuatros1,tablatress2)
+    if len(tablatress1) > 0:
+        for elem in reversed(tablatress2):
+            res = conteo(elem,"1")
+            if res < 3:
+                tablatress2.remove(elem)
+        print(tablatress2)
+    _comparar(tablacuatros1,tablacincos1,tablacuatros2)
+    if len(tablacuatros1) > 0:
+        for elem in reversed(tablacuatros2):
+            res = conteo(elem,"1")
+            if res < 4:
+                tablacuatros2.remove(elem)
+        print(tablacuatros2)
+    _comparar(tablacincos1,tablaseises1,tablacincos2)
+    if len(tablacincos1) > 0:
+        for elem in reversed(tablacincos2):
+            res = conteo(elem,"1")
+            if res < 5:
+                tablacincos2.remove(elem)
+        print(tablacincos2)
+    _comparar(tablaseises1,tablasietes1,tablaseises2)
+    if len(tablaseises1) > 0:
+        for elem in reversed(tablaseises2):
+            res = conteo(elem,"1")
+            if res < 6:
+                tablaseises2.remove(elem)
+        print(tablaseises2)
+    _comparar(tablasietes1,tablaochos1,tablasietes2)
+    if len(tablasietes1) > 0:
+        for elem in reversed(tablasietes2):
+            res = conteo(elem,"1")
+            if res < 7:
+                tablasietes2.remove(elem)
+        print(tablasietes2)
+    _comparar(tablaochos1,tablanueves1,tablaochos2)
+    if len(tablaochos1) > 0:
+        for elem in reversed(tablaochos2):
+            res = conteo(elem,"1")
+            if res < 8:
+                tablaochos2.remove(elem)
+        print(tablaochos2)
+    _comparar(tablanueves1,tabladieces1,tablanueves2)
+    if len(tablanueves1) > 0:
+        for elem in reversed(tablanueves2):
+            res = conteo(elem,"1")
+            if res < 9:
+                tablanueves2.remove(elem)
+        print(tablanueves2)
+    if len(tabladieces) > 0:
+        print(tabladieces)
+    else:
+        pass
 
+"""
 miniterminos(0)
 compararTodas()
+compararTodas2()
