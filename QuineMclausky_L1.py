@@ -225,34 +225,11 @@ def funcion(numeros):
     else:
         print(tabladieces," miniterminos con 10 unos")
         tabla_final.append(tabladieces)
-    """
-    for elem in tabla_final:
-        for mini in elem:
-            print(mini)
-    """
-output2 = []
-def comparaciones(A,P):
-  if len(A) > 0:
-    for i in range(len(A)-len(P)+1):
-      for j in range(len(P)):
-        if P[j] == A[i+j]:
-          cad1 = P[j]
-          palabra2.append(cad1)
-        elif P[j] != A[i+j]:
-          cad2 = P[j].replace('1','-',1)
-          palabra2.append(cad2)
-    else:
-      pass
+    return tabla_final
 
-  lista = lambda palabra2, variables: [palabra2[i:i+variables] for i in range(0, len(palabra2), variables)]
-  output = lista(palabra2, variables)
-  for min in output:
-      min2 = ''.join(min)
-  output2.append(min2)
 
 #si haces este codiguito de 0s y 1s pasa a letras, por lo que esto servira correctamente al mostrar la ultima funcion
 #tab = tablero(0)
 #for x in tab:
 #    print(bintostr(x))"
 miniterminos(0)
-comparaciones(tablaunos,tabladoss)

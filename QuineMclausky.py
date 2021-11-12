@@ -194,6 +194,8 @@ def compararTodas():
     print(tablaochos1)
     _comparar(tablanueves,tabladieces,tablanueves1)
     print(tablanueves1)
+
+    #print(tabladieces)
     #print(tabladieces)
 
 miniterminos(0)
