@@ -174,11 +174,10 @@ def _comparar(arr,prr,out):
       comparaciones(elem,ele,out)
 
 def compararTodas():
-    #_comparar(tablaceros,tablaunos,tablaceros1)
-    #print(tablaceros1)
+    _comparar(tablaceros,tablaunos,tablaceros1)
+    print(tablaceros1)
     _comparar(tablaunos,tabladoss,tablaunos1)
     print(tablaunos1)
-"""
     _comparar(tabladoss,tablatress,tabladoss1)
     print(tabladoss1)
     _comparar(tablatress,tablacuatros,tablatress1)
@@ -195,7 +194,7 @@ def compararTodas():
     print(tablaochos1)
     _comparar(tablanueves,tabladieces,tablanueves1)
     print(tablanueves1)
-    print(tabladieces)
-"""
+    #print(tabladieces)
+
 miniterminos(0)
 compararTodas()
