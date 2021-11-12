@@ -134,33 +134,68 @@ def funcion(numeros):
         pass
     else:
         print(tabladieces," miniterminos con 10 unos")
-    _comparar(tablaceros,tablaunos)
-palabra = []
+    print("\n")
+palabra2 = []
 
-def comparaciones(A,P):
+tablaceros1 = []
+tablaunos1 = []
+tabladoss1 = []
+tablatress1 = []
+tablacuatros1 = []
+tablacincos1 = []
+tablaseises1 = []
+tablasietes1 = []
+tablaochos1 = []
+tablanueves1 = []
+tabladieces1 = []
+
+def comparaciones(A,P,out):
   if len(A) > 0:
     for i in range(len(A)-len(P)+1):
       for j in range(len(P)):
         if P[j] == A[i+j]:
           cad1 = P[j]
-          palabra.append(cad1)
+          palabra2.append(cad1)
         elif P[j] != A[i+j]:
           cad2 = P[j].replace('1','-',1)
-          palabra.append(cad2)
+          palabra2.append(cad2)
     else:
       pass
 
-  lista = lambda palabra, variable: [palabra[i:i+variable] for i in range(0, len(palabra), variable)]
-  output = lista(palabra, variables)
-  print(output)
-#arr = ["000100","100000"]
-#rr = ["000101","100010","100100"]
+  lista = lambda palabra2, variables: [palabra2[i:i+variables] for i in range(0, len(palabra2), variables)]
+  output = lista(palabra2, variables)
+  for min in output:
+      min2 = ''.join(min)
+  out.append(min2)
 
-def _comparar(arr,prr):
+def _comparar(arr,prr,out):
   for elem in arr:
     for ele in prr:
-      comparaciones(elem,ele)
-      print("------")
+      comparaciones(elem,ele,out)
 
-_comparar(tablaceros,tablaunos)
+def compararTodas():
+    #_comparar(tablaceros,tablaunos,tablaceros1)
+    #print(tablaceros1)
+    _comparar(tablaunos,tabladoss,tablaunos1)
+    print(tablaunos1)
+"""
+    _comparar(tabladoss,tablatress,tabladoss1)
+    print(tabladoss1)
+    _comparar(tablatress,tablacuatros,tablatress1)
+    print(tablatress1)
+    _comparar(tablacuatros,tablacincos,tablacuatros1)
+    print(tablacuatros1)
+    _comparar(tablacincos,tablaseises,tablacincos1)
+    print(tablacincos1)
+    _comparar(tablaseises,tablasietes,tablaseises1)
+    print(tablaseises1)
+    _comparar(tablasietes,tablaochos,tablasietes1)
+    print(tablasietes1)
+    _comparar(tablaochos,tablanueves,tablaochos1)
+    print(tablaochos1)
+    _comparar(tablanueves,tabladieces,tablanueves1)
+    print(tablanueves1)
+    print(tabladieces)
+"""
 miniterminos(0)
+compararTodas()
