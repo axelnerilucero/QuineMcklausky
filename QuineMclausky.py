@@ -157,7 +157,7 @@ def comparaciones(A,P,out):
           cad1 = P[j]
           palabra2.append(cad1)
         elif P[j] != A[i+j]:
-          cad2 = P[j].replace('1','-',1)
+          cad2 = P[j].replace('1','-')
           palabra2.append(cad2)
     else:
       pass
@@ -270,28 +270,29 @@ def compararTodas():
     else:
         pass
 final = []
+
 def compararTodas2():
     _comparar(tablaceros1,tablaunos1,tablaceros2)
     if len(tablaceros1) > 0:
-        print(tablaceros2)
+        pass
+
     _comparar(tablaunos1,tabladoss1,tablaunos2)
     if len(tablaunos1) > 0:
         for elem in reversed(tablaunos2):
             res = conteo(elem,"1")
             if res < 1:
                 tablaunos2.remove(elem)
-            elif res < 1 and tablaunos2[elem] == elem:
+            elif res < 1 and elem== elem:
                 final.append(elem)
                 tablaunos2.remove(elem)
 
-        print(tablaunos2)
-"""
     _comparar(tabladoss1,tablatress1,tabladoss2)
     if len(tabladoss1) > 0:
         for elem in reversed(tabladoss2):
             res = conteo(elem,"1")
             if res < 2:
                 tabladoss2.remove(elem)
+"""
         print(tabladoss2)
     _comparar(tablatress1,tablacuatros1,tablatress2)
     if len(tablatress1) > 0:
@@ -348,6 +349,14 @@ def compararTodas2():
         pass
 
 """
+
+
 miniterminos(0)
 compararTodas()
 compararTodas2()
+tablaceros2 = list(set(tablaceros2))
+tablaunos2 = list(set(tablaunos2))
+tabladoss2 = list(set(tabladoss2))
+print(tablaceros2)
+print(tablaunos2)
+print(tabladoss2)
